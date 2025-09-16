@@ -33,7 +33,7 @@ You can find an **important** description of the theory behind LDA in - [Exercis
 
 In this exercise, we will be using numpy, scipy and scikit-image. You should have these libraries installed, else instructions can be found in the previous exercises.
 
-We will use the virtual environment from the previous exercise (course02502).
+We will use the virtual environment from the previous exercise (course02503).
 
 ## Exercise data and material
 

@@ -25,7 +25,7 @@ After completing this exercise, the student should be able to do the following:
 
 In this exercise, we will be using [scikit-image](https://scikit-image.org/). You should have this library installed, else instructions can be found in the previous exercises.
 
-We will use the virtual environment from the previous exercise (`course02502`). 
+We will use the virtual environment from the previous exercise (`course02503`). 
 
 # Exercise data and material
 
