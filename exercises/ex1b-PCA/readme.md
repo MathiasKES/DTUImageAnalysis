@@ -185,13 +185,13 @@ Compare the results from the results you found using the step-by-step procedure.
 (Further info [here](https://anaconda.org/anaconda/scikit-learn) and [here](https://scikit-learn.org/stable/))
 
 ```
-activate course02502
+activate course02503
 conda install -c anaconda scikit-learn
 ```
 
 **seaborn**
 (Further info [here](https://anaconda.org/anaconda/seaborn) and [here](https://seaborn.pydata.org/))
 ```
-activate course02502
+activate course02503
 conda install -c anaconda seaborn
 ```

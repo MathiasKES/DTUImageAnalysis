@@ -14,10 +14,10 @@ To edit the code given in this course we use VS Code, but if you are more famili
 When you have installed Conda and VS Code, you can start by creating a **virtual environment**. A virtual environment is a practical way of keeping a specific Python interpreter, installed libraries and scrips isolated. So if you have several projects that each requires different libraries, they can be kept separate.
 
 ### Creating and activating a conda environment
-Start an **Anaconda prompt** and do:
+Start an **VS Code terminal** and do:
 
 ```Shell
-conda create --name course02503 python=3.9
+conda create --name course02503 python=3.10
 conda activate course02503
 ```
 
@@ -56,7 +56,7 @@ print(sys.exec_prefix)
 
 ## Installing Python packages
 
-In this course, we will use several Python packages. We will install them as needed. To install the package [scikit-image (skimage)](https://scikit-image.org/), start an **Anaconda prompt** and do:
+In this course, we will use several Python packages. We will install them as needed. To install the package [scikit-image (skimage)](https://scikit-image.org/), start an **VS Code terminal** and do:
 
 ```Shell
 conda activate course02503
@@ -70,14 +70,21 @@ You should also install
 - [pydicom](https://anaconda.org/conda-forge/pydicom)
 
 
-## Exercise data and material
+## Exercise data and material (Setting up)
 
 The data and material needed for this exercise can be found here: [exercise data and material](data)
 
-Start by creating and exercise folder where you keep your data, Python scripts or Notebooks. Download or clone the data and material and place them in this folder.
+Start by creating and exercise folder where you keep your data, Python scripts or Notebooks. Download or clone the data and material (from GitHub instructions below) and place them in this folder.
 
-### Using Github to get all material and data at once
+### Using GitHub to get all the material and data at once
 
 You can get all the exercise material including the data by (for example):
-- download the current version of the exercise and data as a .zip file. Do this by pressing the green `<>Code` button and select the **Download ZIP** option.
-- Clone the repository using a [Git](https://git-scm.com/) client.
+- Option 1: download the current version of the exercise and data as a .zip file. Do this by going to the [main page](https://github.com/RasmusRPaulsen/DTUImageAnalysis/tree/main) and pressing the green `<>Code` button and select the **Download ZIP** option.
+- Option 2: Clone the repository using a [Git](https://git-scm.com/) client.
+  1. Go to terminal and type
+  2. ```Shell
+     cd /path/to/exercise/folder
+     git clone https://github.com/RasmusRPaulsen/DTUImageAnalysis.git
+     ```
+
+

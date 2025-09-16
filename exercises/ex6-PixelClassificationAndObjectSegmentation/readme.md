@@ -41,7 +41,7 @@ After completing this exercise, the student should be able to do the following:
 
 In this exercise, we will be using both [scikit-image](https://scikit-image.org/) and [SciPy](https://scipy.org/). You should have these libraries installed, else instructions can be found in the previous exercises.
 
-We will use the virtual environment from the previous exercise (`course02502`). 
+We will use the virtual environment from the previous exercise (`course02503`). 
 
 Let us start with some imports and defining a convenience function:
 

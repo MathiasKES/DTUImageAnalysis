@@ -28,7 +28,7 @@ In this exercise, we will be using the popular [*OpenCV*](https://opencv.org/) l
 We will use the virtual environment from the previous exercise (`course02502`). Start an **Anaconda prompt** and do:
 
 ```
-activate course02502
+activate course02503
 pip install opencv-python
 ```
 

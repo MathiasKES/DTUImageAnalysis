@@ -37,13 +37,13 @@ After completing this exercise, the student should be able to do the following:
 29. Visualize individual DICOM files and select appropriate gray value mapping limits to enhance contrast.
 
 
-## Conda, VS Code and virtual environments
+## Conda, VS Code, virtual environments and setting up Exercises
 
-See the setup guide for instructions on how to install and setup Conda, VS Code and virtual environments. The guide also includes some navigation tips and tricks in VS code for an easy start.  
+See the [setup guide](setup.md) for instructions on how to install and setup Conda, VS Code and virtual environments. The guide also includes some navigation tips and tricks in VS code for an easy start and in the end, setup to start the exercises.  
 
 ## Importing relevant libraries
 
-Create a new Notebook or Python script. Then we start by importing some relevant libraries:
+Create a new Notebook or Python script in the exercise folder. Then we start by importing some relevant libraries:
 
 ```python
 from skimage import color, io, measure, img_as_ubyte

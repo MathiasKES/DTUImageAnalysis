@@ -18,7 +18,7 @@ In this exercise, we will introduce SimpleITK. SimpleITK is an open-source image
 
 You can install SimpleITK with the command ```pip install SimpleITK```.
 
-We will use the virtual environment from the previous exercise (course02502).
+We will use the virtual environment from the previous exercise (course02503).
 
 # Image Registration
 
