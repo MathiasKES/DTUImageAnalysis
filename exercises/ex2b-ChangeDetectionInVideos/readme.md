@@ -25,17 +25,11 @@ After completing this exercise, the student should be able to do the following:
 
 In this exercise, we will be using the popular [*OpenCV*](https://opencv.org/) library to perform real-time image analysis.
 
-We will use the virtual environment from the previous exercise (`course02502`). Start an **Anaconda prompt** and do:
+We will use the virtual environment from the previous exercise (`course02503`). Start an **Anaconda prompt** and do:
 
 ```
-activate course02503
+conda activate course02503
 pip install opencv-python
-```
-
-You might also need to install **Numpy**:
-
-```
-conda install -c anaconda numpy
 ```
 
 # Exercise data and material

@@ -43,7 +43,7 @@ After completing this exercise, the student should be able to do the following:
 
 ## Importing required Python packages
 
-We will use the virtual environment from the previous exercise (`course02502`). 
+We will use the virtual environment from the previous exercise (`course02503`). 
 
 Let us start with some imports:
 

@@ -23,7 +23,7 @@ After completing this exercise, the student should be able to do the following:
 
 In this exercise, we will be using both [scikit-image](https://scikit-image.org/) and [OpenCV](https://opencv.org/). You should have both libraries installed, else instructions can be found in the previous exercises.
 
-We will use the virtual environment from the previous exercise (`course02502`). 
+We will use the virtual environment from the previous exercise (`course02503`). 
 
 # Exercise data and material
 
