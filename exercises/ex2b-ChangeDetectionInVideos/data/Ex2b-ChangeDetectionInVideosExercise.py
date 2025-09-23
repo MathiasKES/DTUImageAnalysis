@@ -3,6 +3,7 @@ import cv2
 import numpy as np
 from skimage.util import img_as_float
 from skimage.util import img_as_ubyte
+from collections import deque
 
 
 def show_in_moved_window(win_name, img, x, y):
@@ -21,7 +22,8 @@ def capture_from_camera_and_show_images():
     url = 0
     use_droid_cam = False
     if use_droid_cam:
-        url = "http://192.168.1.120:4747/video"
+        url = "http://192.168.0.106:4747/video"
+        # url = "http://213.236.250.78/mjpg/video.mjpg"
     cap = cv2.VideoCapture(url)
     # cap = cv2.VideoCapture(0)
     if not cap.isOpened():
@@ -36,9 +38,17 @@ def capture_from_camera_and_show_images():
         print("Can't receive frame")
         exit()
 
+
     # Transform image to gray scale and then to float, so we can do some processing
     frame_gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     frame_gray = img_as_float(frame_gray)
+
+    bg_frame_gray = frame_gray
+
+    avg_fg_pixels = deque(maxlen=60) # For 60 FPS = avg fg pixels per second
+
+    HEIGHT, WIDTH, CHANNELS = frame.shape
+    PIXELS = HEIGHT*WIDTH
 
     # To keep track of frames per second
     start_time = time.time()
@@ -57,6 +67,30 @@ def capture_from_camera_and_show_images():
         # Compute difference image
         dif_img = np.abs(new_frame_gray - frame_gray)
 
+        # Compute binary image by applaying a threshold, 
+        # T to difference image
+        T = 0.1
+        bin_img = dif_img > T
+        
+        F = np.sum(bin_img == 1)
+        avg_fg_pixels.append(F)
+        
+        Fp = F/PIXELS
+        print(f"{F:.0f}, {Fp*100:.0f}%", end="             \r")
+
+        A = 0.05
+        if Fp > A:
+            # Put the FPS on the new_frame
+            str_out = "Change Detected!"
+            font = cv2.FONT_HERSHEY_COMPLEX
+            cv2.putText(new_frame, str_out, (WIDTH//2, HEIGHT//2), font, 1, 255, 1)
+
+
+        ALPHA = 0.95
+
+
+        bin_img_uint8 = (bin_img.astype(np.uint8)) * 255
+
         # Keep track of frames-per-second (FPS)
         n_frames = n_frames + 1
         elapsed_time = time.time() - start_time
@@ -69,11 +103,15 @@ def capture_from_camera_and_show_images():
 
         # Display the resulting frame
         show_in_moved_window('Input', new_frame, 0, 10)
-        show_in_moved_window('Input gray', new_frame_gray, 600, 10)
-        show_in_moved_window('Difference image', dif_img, 1200, 10)
+        show_in_moved_window("Background image", bg_frame_gray, WIDTH, 10)
+        # show_in_moved_window('Input gray', new_frame_gray, 0, 10)
+        show_in_moved_window('Difference image', dif_img, 0, HEIGHT+10)
+        show_in_moved_window('Binary image', bin_img_uint8, WIDTH, HEIGHT+10)
+
 
         # Old frame is updated
         frame_gray = new_frame_gray
+        bg_frame_gray = ALPHA * frame_gray + (1-ALPHA) * new_frame_gray
 
         if cv2.waitKey(1) == ord('q'):
             stop = True
