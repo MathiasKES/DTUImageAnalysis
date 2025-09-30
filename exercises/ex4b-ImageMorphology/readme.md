@@ -214,7 +214,7 @@ Use the previosly used methods to compute a binary image from the puzzle photo. 
 
 ### Exercise 16
 
-Try to use a an *opening* with a large footprint to clean the binary. Compute the outline. Do we have good outlines for all the pieces?
+Try to use *closing* with a large footprint to clean the binary. Compute the outline. Do we have good outlines for all the pieces?
 
 
 The conclusion is that you can solve a lot of problems using morphological operations but sometimes it is better to think even more about how to acquire the images.
